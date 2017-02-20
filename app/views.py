@@ -41,6 +41,17 @@ def add_file():
         return redirect(url_for('home'))
 
     return render_template('add_file.html')
+    
+@app.route('/filelisting')
+def filelisting():
+    """Renders page with list of files uploaded"""
+    rootdir = os.getcwd() 
+    print rootdir 
+    for subdir, dirs, files in os.walk(rootdir + 'app/static/uploads'): 
+        for file in files: 
+            message = os.path.join(subdir, file)
+            flash(message)
+    return render_template('list.html')
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():

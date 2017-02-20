@@ -1,0 +1,3 @@
+https://github.com/JayWall/python_koans
+https://github.com/JayWall/info3180-lab1
+https://dry-mesa-22682.herokuapp.com/
