@@ -45,6 +45,9 @@ def add_file():
 @app.route('/filelisting')
 def filelisting():
     """Renders page with list of files uploaded"""
+    if not session.get('logged_in'):
+        abort(401) 
+        
     rootdir = os.getcwd() 
     print rootdir 
     for subdir, dirs, files in os.walk(rootdir + 'app/static/uploads'): 
